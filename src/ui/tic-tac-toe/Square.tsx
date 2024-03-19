@@ -1,4 +1,5 @@
 import { cva } from "../../../styled-system/css";
+import { Grid } from "../../../styled-system/jsx";
 
 const square = cva({
 	base: {
@@ -18,7 +19,19 @@ const square = cva({
 });
 
 const Square = () => {
-	return <button className={square()}>X</button>;
+	return (
+		<Grid columns={3} gap={0}>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+			<button className={square()}>X</button>
+		</Grid>
+	);
 };
 
 export default Square;
