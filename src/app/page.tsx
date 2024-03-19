@@ -1,11 +1,16 @@
-import { css } from "../../styled-system/css";
+import AvatarView from "@/components/AvatarView";
+import Counters from "@/components/Counters";
+import ListItems from "@/components/ListItems";
+import { Stack } from "../../styled-system/jsx";
 
 export default function Home() {
 	return (
 		<main>
-			<div className={css({ fontSize: "2xl", fontWeight: "bold" })}>
-				Hello 🐼!
-			</div>
+			<Stack>
+				<Counters />
+				<AvatarView />
+				<ListItems />
+			</Stack>
 		</main>
 	);
 }
