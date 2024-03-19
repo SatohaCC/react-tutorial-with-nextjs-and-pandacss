@@ -1,7 +1,7 @@
 "use client";
 
-import MyButton from "@/ui/MyButton";
-import MyButtonLiftUp from "@/ui/MyButtonLiftUp";
+import MyButton from "@/ui/quickstart/MyButton";
+import MyButtonLiftUp from "@/ui/quickstart/MyButtonLiftUp";
 import { useState } from "react";
 import { css } from "../../../styled-system/css";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { cva } from "../../styled-system/css";
+import { cva } from "../../../styled-system/css";
 
 const button = cva({
 	base: {
