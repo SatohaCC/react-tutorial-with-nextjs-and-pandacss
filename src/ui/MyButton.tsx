@@ -1,3 +1,5 @@
+"use client";
+
 import { cva } from "../../styled-system/css";
 
 const button = cva({
@@ -17,8 +19,14 @@ const button = cva({
 });
 
 const MyButton = () => {
+	const handleClick = () => {
+		alert("You clicked me!");
+	};
 	return (
-		<button className={button({ visual: "solid", size: "sm" })}>
+		<button
+			className={button({ visual: "solid", size: "sm" })}
+			onClick={handleClick}
+		>
 			I&apos;m a button
 		</button>
 	);
