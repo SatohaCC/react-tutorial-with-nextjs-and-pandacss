@@ -3,7 +3,7 @@
 import MyButton from "@/ui/MyButton";
 import MyButtonLiftUp from "@/ui/MyButtonLiftUp";
 import { useState } from "react";
-import { css } from "../../styled-system/css";
+import { css } from "../../../styled-system/css";
 
 const Counters = () => {
 	const [count, setCount] = useState(0);

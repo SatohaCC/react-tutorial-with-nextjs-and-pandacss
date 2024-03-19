@@ -1,6 +1,6 @@
-import AvatarView from "@/components/AvatarView";
-import Counters from "@/components/Counters";
-import ListItems from "@/components/ListItems";
+import ListItems from "@/components/qucikstart/ListItems";
+import AvatarView from "@/components/qucikstart/AvatarView";
+import Counters from "@/components/qucikstart/Counters";
 import { Stack } from "../../styled-system/jsx";
 
 export default function Home() {
