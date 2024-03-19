@@ -1,5 +1,9 @@
+"use client";
+
 import MyButton from "@/ui/MyButton";
+import MyButtonLiftUp from "@/ui/MyButtonLiftUp";
 import Image from "next/image";
+import { useState } from "react";
 import { css } from "../../styled-system/css";
 
 const user = {
@@ -14,6 +18,12 @@ const products = [
 ];
 
 export default function Home() {
+	const [count, setCount] = useState(0);
+
+	function handleClick() {
+		setCount(count + 1);
+	}
+
 	const listItems = products.map((product) => (
 		<li
 			key={product.id}
@@ -34,6 +44,14 @@ export default function Home() {
 			<MyButton />
 			<MyButton />
 			<br />
+			<div className={css({ fontSize: "2xl", fontWeight: "bold" })}>
+				Counters that update together
+			</div>
+			<MyButtonLiftUp count={count} onClick={handleClick} />
+			<MyButtonLiftUp count={count} onClick={handleClick} />
+
+			<br />
+
 			<h1>{user.name}</h1>
 			<Image
 				className="avatar"
