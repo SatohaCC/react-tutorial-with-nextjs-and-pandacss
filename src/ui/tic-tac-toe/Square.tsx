@@ -1,3 +1,5 @@
+"use client";
+
 import { cva } from "../../../styled-system/css";
 
 const square = cva({
@@ -22,7 +24,15 @@ type Props = {
 };
 
 const Square = ({ value }: Props) => {
-	return <button className={square()}>{value}</button>;
+	const handleClick = () => {
+		console.log(`You clicked ${value}`);
+	};
+
+	return (
+		<button className={square()} onClick={handleClick}>
+			{value}
+		</button>
+	);
 };
 
 export default Square;
