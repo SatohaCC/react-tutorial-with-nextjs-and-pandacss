@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { cva } from "../../styled-system/css";
 
 const button = cva({
@@ -19,15 +20,16 @@ const button = cva({
 });
 
 const MyButton = () => {
+	const [count, setCount] = useState(0);
 	const handleClick = () => {
-		alert("You clicked me!");
+		setCount(count + 1);
 	};
 	return (
 		<button
-			className={button({ visual: "solid", size: "sm" })}
+			className={button({ visual: "outline", size: "sm" })}
 			onClick={handleClick}
 		>
-			I&apos;m a button
+			Clicked {count} times
 		</button>
 	);
 };
