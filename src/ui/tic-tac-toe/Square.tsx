@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { cva } from "../../../styled-system/css";
 
 const square = cva({
@@ -22,16 +21,12 @@ const square = cva({
 
 type Props = {
 	value: string;
+	onSquareClick: () => void;
 };
 
-const Square = () => {
-	const [value, setValue] = useState<string | null>(null);
-	const handleClick = () => {
-		setValue("X");
-	};
-
+const Square = ({ value, onSquareClick }: Props) => {
 	return (
-		<button className={square()} onClick={handleClick}>
+		<button className={square()} onClick={onSquareClick}>
 			{value}
 		</button>
 	);
