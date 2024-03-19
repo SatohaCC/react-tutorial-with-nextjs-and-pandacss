@@ -1,4 +1,4 @@
-import Square from "@/ui/tic-tac-toe/Square";
+import Square from "@/ui/tic-tac-toe/Board";
 import { Center } from "../../styled-system/jsx";
 
 export default function Home() {

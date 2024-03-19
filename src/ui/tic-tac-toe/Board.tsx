@@ -18,7 +18,7 @@ const square = cva({
 	},
 });
 
-const Square = () => {
+const Board = () => {
 	return (
 		<Grid columns={3} gap={0}>
 			<button className={square()}>X</button>
@@ -34,4 +34,4 @@ const Square = () => {
 	);
 };
 
-export default Square;
+export default Board;
