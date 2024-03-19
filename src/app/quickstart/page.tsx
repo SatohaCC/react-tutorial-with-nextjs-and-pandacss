@@ -6,7 +6,7 @@ import { Stack } from "../../../styled-system/jsx";
 export default function Home() {
 	return (
 		<main>
-			{" "}
+			
 			<Stack>
 				<Counters />
 				<AvatarView />
