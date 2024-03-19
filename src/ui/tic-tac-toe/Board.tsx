@@ -1,35 +1,12 @@
-import { cva } from "../../../styled-system/css";
 import { Grid } from "../../../styled-system/jsx";
-
-const square = cva({
-	base: {
-		bg: "fff",
-		border: "1px solid #999",
-		fontSize: "24px",
-		float: "left",
-		fontWeight: "bold",
-		lineHeight: "34px",
-		height: "34px",
-		marginRight: "-1px",
-		marginTop: "-1px",
-		padding: "0",
-		textAlign: "center",
-		width: "34px",
-	},
-});
+import Square from "./Square";
 
 const Board = () => {
 	return (
 		<Grid columns={3} gap={0}>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
-			<button className={square()}>X</button>
+			{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
+				<Square value={i.toString()} key={i} />
+			))}
 		</Grid>
 	);
 };
