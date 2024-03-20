@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Flex } from "../../../styled-system/jsx";
 import Board from "./Board";
 
 export type Squares = string | null;
@@ -14,14 +15,29 @@ const Game = () => {
 		setHistory([...history, nextSquares]);
 		setXIsNext(!xIsNext);
 	};
+	const jumpTo = (step: number) => {};
+
+	const moves = history.map((squares, move) => {
+		let description;
+		if (move > 0) {
+			description = "Go to move #" + move;
+		} else {
+			description = "Go to game start";
+		}
+		return (
+			<li key={move}>
+				<button onClick={() => jumpTo(move)}>{description}</button>
+			</li>
+		);
+	});
 
 	return (
-		<div>
+		<Flex gap={5}>
 			<Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
 			<div>
-				<ol>{/*TODO*/}</ol>
+				<ol>{moves}</ol>
 			</div>
-		</div>
+		</Flex>
 	);
 };
 
