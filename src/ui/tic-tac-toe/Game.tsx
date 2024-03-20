@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Flex } from "../../../styled-system/jsx";
+import { button } from "../quickstart/MyButton";
 import Board from "./Board";
 
 export type Squares = string | null;
@@ -9,13 +10,20 @@ export type Squares = string | null;
 const Game = () => {
 	const [xIsNext, setXIsNext] = useState(true);
 	const [history, setHistory] = useState([Array(9).fill(null)]);
-	const currentSquares = history[history.length - 1];
+	const [currentMove, setCurrentMove] = useState(0);
+	const currentSquares = history[currentMove];
 
 	const handlePlay = (nextSquares: Squares[]) => {
-		setHistory([...history, nextSquares]);
+		const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+		setHistory(nextHistory);
+		setCurrentMove(nextHistory.length - 1);
 		setXIsNext(!xIsNext);
 	};
-	const jumpTo = (step: number) => {};
+
+	const jumpTo = (nextMove: number) => {
+		setCurrentMove(nextMove);
+		setXIsNext(nextMove % 2 === 0);
+	};
 
 	const moves = history.map((squares, move) => {
 		let description;
@@ -26,7 +34,12 @@ const Game = () => {
 		}
 		return (
 			<li key={move}>
-				<button onClick={() => jumpTo(move)}>{description}</button>
+				<button
+					onClick={() => jumpTo(move)}
+					className={button({ visual: "outline", size: "md" })}
+				>
+					{description}
+				</button>
 			</li>
 		);
 	});
