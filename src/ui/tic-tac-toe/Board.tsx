@@ -1,7 +1,6 @@
 "use client";
 
 import { Grid } from "../../../styled-system/jsx";
-
 import Square from "./Square";
 import { Squares, calculateWinner } from "./libs";
 
