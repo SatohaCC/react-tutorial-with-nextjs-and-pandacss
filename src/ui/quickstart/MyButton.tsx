@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cva } from "../../../styled-system/css";
 
-const button = cva({
+export const button = cva({
 	base: {
 		display: "flex",
 	},
@@ -14,6 +14,7 @@ const button = cva({
 		},
 		size: {
 			sm: { padding: "4", fontSize: "12px" },
+			md: { padding: "2", fontSize: "12px", width: "300px" },
 			lg: { padding: "8", fontSize: "24px" },
 		},
 	},
