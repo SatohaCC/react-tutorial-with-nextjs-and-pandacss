@@ -1,8 +1,9 @@
 "use client";
 
-import { cva } from "../../styled-system/css";
+import { useState } from "react";
+import { cva } from "../../../styled-system/css";
 
-const button = cva({
+export const button = cva({
 	base: {
 		display: "flex",
 	},
@@ -13,24 +14,25 @@ const button = cva({
 		},
 		size: {
 			sm: { padding: "4", fontSize: "12px" },
+			md: { padding: "2", fontSize: "12px", width: "300px" },
 			lg: { padding: "8", fontSize: "24px" },
 		},
 	},
 });
 
-type Props = {
-	count: number;
-	onClick: () => void;
-};
-const MyButtonLiftUp = ({ count, onClick }: Props) => {
+const MyButton = () => {
+	const [count, setCount] = useState(0);
+	const handleClick = () => {
+		setCount(count + 1);
+	};
 	return (
 		<button
 			className={button({ visual: "outline", size: "sm" })}
-			onClick={onClick}
+			onClick={handleClick}
 		>
 			Clicked {count} times
 		</button>
 	);
 };
 
-export default MyButtonLiftUp;
+export default MyButton;
