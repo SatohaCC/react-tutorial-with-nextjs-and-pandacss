@@ -14,21 +14,14 @@ const Board = ({ xIsNext, squares, onPlay }: Props) => {
 	const handleClick = (i: number) => {
 		if (squares[i] || calculateWinner(squares)) return;
 		const nextSquares = squares.slice();
-		if (xIsNext) {
-			nextSquares[i] = "X";
-		} else {
-			nextSquares[i] = "O";
-		}
+		nextSquares[i] = xIsNext ? "X" : "O";
 		onPlay(nextSquares);
 	};
 
 	const winner = calculateWinner(squares);
-	let status;
-	if (winner) {
-		status = "Winner: " + winner;
-	} else {
-		status = "Next player: " + (xIsNext ? "X" : "O");
-	}
+	const status = winner
+		? `Winner: ${winner}`
+		: `Next player: ${xIsNext ? "X" : "O"}`;
 
 	return (
 		<div>
