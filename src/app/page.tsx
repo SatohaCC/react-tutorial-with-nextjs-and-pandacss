@@ -1,11 +1,11 @@
-import Board from "@/ui/tic-tac-toe/Board";
+import Game from "@/ui/tic-tac-toe/Game";
 import { Center } from "../../styled-system/jsx";
 
 export default function Home() {
 	return (
 		<main>
 			<Center p={5}>
-				<Board />
+				<Game />
 			</Center>
 		</main>
 	);

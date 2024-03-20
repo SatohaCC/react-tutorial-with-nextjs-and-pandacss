@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import { Grid } from "../../../styled-system/jsx";
+import { Squares } from "./Game";
 import Square from "./Square";
-type Squares = string | null;
 
-const Board = () => {
-	const [xIsNext, setXIsNext] = useState(true);
-	const [squares, setSquares] = useState<Squares[]>(Array(9).fill(null));
+type Props = {
+	xIsNext: boolean;
+	squares: Squares[];
+	onPlay: (i: Squares[]) => void;
+};
 
+const Board = ({ xIsNext, squares, onPlay }: Props) => {
 	const handleClick = (i: number) => {
 		if (squares[i] || calculateWinner(squares)) return;
 		const nextSquares = squares.slice();
@@ -17,8 +19,7 @@ const Board = () => {
 		} else {
 			nextSquares[i] = "O";
 		}
-		setSquares(nextSquares);
-		setXIsNext(!xIsNext);
+		onPlay(nextSquares);
 	};
 
 	const winner = calculateWinner(squares);
