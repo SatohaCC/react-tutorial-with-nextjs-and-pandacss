@@ -9,13 +9,13 @@ const square = cva({
 		fontSize: "24px",
 		float: "left",
 		fontWeight: "bold",
-		lineHeight: "34px",
-		height: "34px",
+		lineHeight: "50px",
+		height: "50px",
 		marginRight: "-1px",
 		marginTop: "-1px",
 		padding: "0",
 		textAlign: "center",
-		width: "34px",
+		width: "50px",
 	},
 });
 
