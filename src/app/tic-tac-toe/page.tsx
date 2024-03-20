@@ -1,5 +1,5 @@
 import Game from "@/components/tic-tac-toe/Game";
-import { Center } from "../../styled-system/jsx";
+import { Center } from "../../../styled-system/jsx";
 
 export default function Home() {
 	return (

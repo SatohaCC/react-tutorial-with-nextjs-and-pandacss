@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Flex } from "../../../styled-system/jsx";
-import { button } from "../quickstart/MyButton";
+import { button } from "../../ui/quickstart/MyButton";
 import Board from "./Board";
 import { Squares } from "./libs";
 
