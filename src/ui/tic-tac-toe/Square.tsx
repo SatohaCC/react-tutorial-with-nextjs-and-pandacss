@@ -20,7 +20,7 @@ const square = cva({
 });
 
 type Props = {
-	value: string;
+	value: string | null;
 	onSquareClick: () => void;
 };
 
